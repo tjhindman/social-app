@@ -13,8 +13,8 @@ const App = () => {
         <Route exact path="/" component={Login} />
         <Route path="*" component={NotFound} />
       </Switch>
-      {/* 
-      * if there is a user token should render this Switch component
+      {/* if there is a user token should render this Switch component */}
+      {/*
 
       <Switch>
         <Route exact path="/" component={NewsFeed} />
