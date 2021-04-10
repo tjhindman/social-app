@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 
 import { Navbar } from "./components";
-import { Login, NotFound } from "./views";
+import { Login, NewsFeed, Users, Profile, NotFound } from "./views";
 import "./App.css";
 
 const App = () => {
