@@ -1,30 +1,42 @@
 import { Route, Switch } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 
-import { Navbar } from "./components";
+import { Header } from "./components";
 import { Login, NewsFeed, Users, Profile, NotFound } from "./views";
+
+import { useStore } from "./store";
 import "./App.css";
 
 const App = () => {
-  return (
-    <div className="App">
-      <Navbar />
-      {/* if there is no user token should render this Switch component */}
-      <Switch>
-        <Route exact path="/" component={Login} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-      {/* if there is a user token should render this Switch component */}
-      {/*
+  const authUser = useStore((state) => state.authUser);
 
-      <Switch>
-        <Route exact path="/" component={NewsFeed} />
-        <Route path="/users" component={Users} />
-        <Route path="/profile" component={Profile} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-      
-      */}
-    </div>
+  return (
+    <Container fluid bsPrefix className="App">
+      <Row>
+        <Col>
+          <Header />
+        </Col>
+      </Row>
+      <Row style={{paddingTop: "60px"}}>
+        <Col>
+          {/* if there is no user token should render this Switch component */}
+          {!authUser.token ? (
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route path="*" component={NotFound} />
+            </Switch>
+          ) : (
+            <Switch>
+              <Route exact path="/" component={NewsFeed} />
+              <Route path="/users" component={Users} />
+              <Route path="/profile" component={Profile} />
+              <Route path="*" component={NotFound} />
+            </Switch>
+          )}
+          {/* if there is a user token should render this Switch component */}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
