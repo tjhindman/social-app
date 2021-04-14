@@ -1,5 +1,7 @@
 import { Route, Switch } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import { Header } from "./components";
 import { AuthUser, NewsFeed, Users, Profile, NotFound } from "./views";
@@ -11,13 +13,13 @@ const App = () => {
   const authUser = useStore((state) => state.authUser);
 
   return (
-    <Container fluid bsPrefix className="App">
+    <Container fluid={true} className="App">
       <Row>
         <Col>
           <Header />
         </Col>
       </Row>
-      <Row style={{ paddingTop: "60px" }}>
+      <Row style={{ paddingTop: "7vh", height: "100vh" }}>
         <Col>
           {/* if there is no user token should render this Switch component */}
           {!authUser.token ? (
