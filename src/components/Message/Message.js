@@ -31,6 +31,7 @@ export const Message = () => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
+          <Card.Subtitle className="text-muted">Time of post</Card.Subtitle>
         </div>
         <div
           style={{
