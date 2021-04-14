@@ -1,8 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Heart } from "react-bootstrap-icons";
 
-export const Message = () => {
+export const User = () => {
   return (
     <Card
       style={{
@@ -31,25 +30,6 @@ export const Message = () => {
             bulk of the card's content.
           </Card.Text>
           <Card.Subtitle className="text-muted">Time of post</Card.Subtitle>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            width: "13%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Heart size={30} /> 1
-          </div>
         </div>
       </Card.Body>
     </Card>
