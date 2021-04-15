@@ -20,7 +20,7 @@ const App = () => {
         </Col>
       </Row>
       <Row style={{ paddingTop: "7vh", height: "100vh" }}>
-        <Col>
+        <Col style={{ height: "100%" }}>
           {/* if there is no user token should render this Switch component */}
           {!authUser.token ? (
             <Switch>

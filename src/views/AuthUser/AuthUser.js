@@ -19,7 +19,7 @@ export const AuthUser = (props) => {
         <>
           <Login />
           <div style={{ paddingTop: "5vh" }}>
-            New to Kwitter? 
+            New to Kwitter?
             <Button onClick={() => setUserStatus("signUp")}>Sign up</Button>
           </div>
         </>
@@ -27,7 +27,7 @@ export const AuthUser = (props) => {
         <>
           <SignUp />
           <div style={{ paddingTop: "5vh" }}>
-            Already have an account? 
+            Already have an account?
             <Button onClick={() => setUserStatus("login")}>Login</Button>
           </div>
         </>
