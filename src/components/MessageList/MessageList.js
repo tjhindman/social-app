@@ -21,7 +21,7 @@ export const MessageList = () => {
         <Form.Control style={{ width: "85%" }} placeholder="New message..." />
         <Button type="submit">Send</Button>
       </Form>
-      <div style={{ height: "76vh", width: "100%", overflow: "scroll" }}>
+      <div style={{ height: "76vh", overflow: "scroll" }}>
         {messages.map((message) => (
           <Message />
         ))}

@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 
 import { useStore } from "../../store";
 
+// refactor all files to follow this styling pattern after skeleton finished
 const styles = {
   navBarWrap: {
     height: "7vh",
