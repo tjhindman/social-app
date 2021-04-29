@@ -3,11 +3,14 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import { useStore } from "../../store";
+
 export const Login = () => {
   const [state, setState] = useState({
     username: "",
     password: "",
   });
+  const login = useStore((state) => state.login);
 
   const handleChange = (e) => {
     setState((state) => ({ ...state, [e.target.name]: e.target.value }));
@@ -16,6 +19,7 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state);
+    login()
     setState({
       username: "",
       password: "",

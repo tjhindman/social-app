@@ -4,9 +4,12 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import { UserList } from "../../components";
+import { UserList, UserPreview } from "../../components";
+
+import { useStore } from "../../store";
 
 export const Users = (props) => {
+  const selectedUser = useStore((state) => state.selectedUser);
   return (
     <div style={{ height: "100%" }}>
       <Row
@@ -32,19 +35,22 @@ export const Users = (props) => {
         </Form>
       </Row>
       <Row style={{ height: "87%" }}>
-        <Col sm={7}>
+        <Col sm={7} style={{ height: "100%" }}>
           <UserList />
         </Col>
         <Col
           style={{
             display: "flex",
-            backgroundColor: "green",
             justifyContent: "center",
-            alignItems: "center",
+            height: "100%",
           }}
           sm={5}
         >
-          User Preview
+          {selectedUser.username ? (
+            <UserPreview />
+          ) : (
+            "Click on a user to find out more details!"
+          )}
         </Col>
       </Row>
     </div>

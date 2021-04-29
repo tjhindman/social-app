@@ -17,8 +17,9 @@ const styles = {
 
 export const Header = (props) => {
   const authUser = useStore((state) => state.authUser);
+  const logout = useStore((state) => state.logout);
 
-  const handleLogout = (e) => {};
+  // const handleLogout = (e) => {};
 
   return (
     <Navbar style={styles.navBarWrap} fixed="top" bg="light" expand="sm">
@@ -26,12 +27,14 @@ export const Header = (props) => {
       {!authUser.token ? (
         ""
       ) : (
-        <Nav className="justify-content-end" style={styles.navLinkWrap}>
+        <Nav className="justify-content-end align-items-center" style={styles.navLinkWrap}>
           <Nav.Link href="/">News Feed</Nav.Link>
           <Nav.Link href="/users">Users</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>
           <Nav.Item>
-            <Button onClick={() => handleLogout()}>Logout</Button>
+            <Nav.Link href="/">
+              <Button onClick={() => logout()}>Logout</Button>
+            </Nav.Link>
           </Nav.Item>
         </Nav>
       )}
