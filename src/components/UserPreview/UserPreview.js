@@ -18,7 +18,14 @@ export const UserPreview = () => {
             height: "100%",
           }}
         />
-        <div style={{ marginLeft: "4%" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            marginLeft: "4%",
+          }}
+        >
           <h3>Display name</h3>
           <h5>@username</h5>
         </div>
